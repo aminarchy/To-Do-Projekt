@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+<body>
+  <div class="header"><img
+  class="icon"
+  src="icon to-do.png"
+  alt="icon" /></div>
+    
+  <div class="layout">
+    <div class="box">
+      <!-- das hier ist für die Statistik-->
+      <div class="statistikAnsicht">
+        <div class="aufgabenProTag">
+          <div class="ueberschirift">Aufgaben erledigt pro Tag</div>
+          <div class="balkenDiagramm"><canvas class=chart id="myChart"></canvas></div>
+          <div class="monatUndPfeile">
+            <button class="MM monatUndPfeileInhalt" onclick="prevMonthForStatistics()"><i class="fas fa-arrow-left"></i></button>
+            <div class="currentmonthForStatistics monatUndPfeileInhalt"></div>
+            <button class="WW monatUndPfeileInhalt" onclick="nextMonthForStatistics()"><i class="fas fa-arrow-right"></i></i></button>
+          </div>
+        </div>
+        <div class="kreisDiagramme"></div>
+      </div>
+
+      <!--der part wird später vllt hinzugefügt aber ist fürs erste unsichtbar-->
+      <div class="wochenansicht">
+        <div class="woche">
+          <div class="wochentag">Montag</div>
+          <div class="wochentag">Dienstag</div>
+          <div class="wochentag">Mittwoch</div>
+          <div class="wochentag">Donnerstag</div>
+          <div class="wochentag">Freitag</div>
+          <div class="wochentag">Samstag</div>
+          <div class="wochentag">Sonntag</div>
+        </div>
+        <div class="todos">
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+          <div class="wochentodos"></div>
+        </div>
+      </div>
+      <div class="monatsansicht active">
+        <div class="currentmonth"></div>
+        <div class="monatsheader">
+          <div class="monatswochentag">Montag</div>
+          <div class="monatswochentag">Dienstag</div>
+          <div class="monatswochentag">Mittwoch</div>
+          <div class="monatswochentag">Donnerstag</div>
+          <div class="monatswochentag">Freitag</div>
+          <div class="monatswochentag">Samstag</div>
+          <div class="monatswochentag">Sonntag</div>
+        </div>
+        <div class="monat">
+          <!--<div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day">31</div>
+          <div class="day active">1</div>
+          <div class="day">2</div>
+          <div class="day">3</div>
+          <div class="day">4</div>
+          <div class="day">5</div>
+          <div class="day event">6</div>
+          <div class="day">7</div>
+          <div class="day">8</div>
+          <div class="day heute">9</div>
+          <div class="day">10</div>
+          <div class="day">11</div>
+          <div class="day">12</div>
+          <div class="day">13</div>
+          <div class="day">14</div>
+          <div class="day">15</div>
+          <div class="day">16</div>
+          <div class="day active">17</div>
+          <div class="day">18</div>
+          <div class="day">19</div>
+          <div class="day">20</div>
+          <div class="day">21</div>
+          <div class="day">22</div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+          <div class="day">25</div>
+          <div class="day">26</div>
+          <div class="day">27</div>
+          <div class="day">28</div>
+          <div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day">31</div>
+          <div class="day">1</div> -->
+        </div>
+      </div>
+    </div>
+    <div class="anzeige active">
+      <div class="angeklicktesDatum"></div>
+
+      <div class="tasks">
+        <div class="task"><div class="noEvents">no events</div></div>
+      
+      </div>
+
+      
+      
+
+      <div id="eventbox" class="addeventbox closed">
+        <div class="popup-content">
+          <input type="text" id="namensInput" class="eventinput namensInput" placeholder="Name">
+          <input type="text" id="beschreibungsInput" class="eventinput" placeholder="Beschreibung (optional)">
+          <div class="timeinput eventinput">
+          <span class="von eventinput">von:</span>
+          <input type="time" class="eventinput" id="von">
+          <span class="bis eventinput">bis:</span>
+          <input type="time" class="eventinput" id="bis"></div>
+          <select class="eventinput selectionOption" id="tagSelect">
+            <option class="selectionOption" value="arbeit">Arbeit</option>
+            <option class="selectionOption" value="freizeit">Freizeit</option>
+            <option class="selectionOption" value="studium">Studium</option>
+          </select>
+          <button class="hinzufuegen">add</button>
+        </div>
+      </div>
+
+
+      <button class="add" onclick="addEventBox()">
+        <i class="fas fa-plus"></i>
+      </button>
+      
+      
+    </div>
+    <div class="menu">
+      <div class="wechsel">
+        <button class="M" onclick="before()"><i class="fas fa-arrow-left"></i></button>
+        <button class="W" onclick="next()"><i class="fas fa-arrow-right"></i></i></button>
+        <button class="today" onclick="today()">today</button>
+      </div>
+      <button class="suche seitenoption" onclick="suche()">
+        <p>Suche</p>
+      </button>
+      <button class="statistik seitenoption" onclick="statistik()">
+        <p>Statistik</p>
+      </button>
+      <button class="option seitenoption" onclick="seitenoptionen()">
+        <p>Optionen</p>
+      </button>
+      <button class="tags seitenoption" onclick="tagsoeffnen()">Tags</button>
+      <button class="priorität seitenoption" onclick="priorityoeffnen()">Priorität</button>
+    </div>
+    
+  </div>
+  
+  
+  <script src="main.js"></script>  
+</body>
+</html>

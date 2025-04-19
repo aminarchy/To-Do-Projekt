@@ -1,0 +1,25 @@
+.test {
+    font-size: large;
+    border-radius:10%;
+    line-height: 50px;
+    width: 100px;
+    border: 2 solid black;
+    color:rgb(1, 2, 1);
+    background-color: rgb(172, 233, 167);
+    padding: 10 20;
+    
+   
+}
+.test:hover {
+    background-color: rgb(128, 235, 151);
+}
+.test:active {
+    background-color: rgb(172, 233, 167);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
