@@ -1,6 +1,6 @@
 # To-Do-Projekt
 
-Das Projekt soll eine To-Do Anwendung sein mit Kalender und task-Menü auf der rechten Seite. Bis jetzt gibt es die Möglichkeit sich einer Statistik anzuschauen, welche die erledigten Aufgaben in einem line-Chart darstellen. 
+Das Projekt soll eine To-Do Anwendung sein mit Kalender und task-Menü auf der rechten Seite. Bis jetzt gibt es die Möglichkeit, tasks zu erstellen, den Status zu setzen und sich eine Statistik anzuschauen, welche die erledigten Aufgaben in einem line-Chart darstellen. 
 
 Weitere Funktionen wie "Suche", "Optionen" (zum Ändern der Farben oder Design z.B.), "Tags"(zum hinzufügen weiterer Tags) und "Priorität"(um Tasks verschiedene Prioritäten zuzuordnen) werden noch hinzugefügt. 
 
